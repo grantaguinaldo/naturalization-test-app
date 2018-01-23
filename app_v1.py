@@ -1,12 +1,10 @@
 from flask import Flask
 app = Flask(__name__)
- 
+
 @app.route("/")
 
 def test():
-
-	import random 
-
+	import random
 	test_questions = [
 
 	'What is the supreme law of the land?',
@@ -109,10 +107,9 @@ def test():
 	'What is the name of the national anthem?',
 	'When do we celebrate Independence Day?',
 	'Name two national U.S. holidays']
+	
+	question = test_questions[random.randint(0, 100)]
+	return question
 
-	num = random.randint(0, 100)
-
-	return test_questions[num]
- 
 if __name__ == "__main__":
-    app.run()
+	app.run()

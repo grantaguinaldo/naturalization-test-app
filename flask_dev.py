@@ -4,8 +4,9 @@ app = Flask (__name__)
 
 @app.route('/')
 def index():
-    return render_template('home.html')
+    from test_app import test_app
 
-if __ __name__ == '__main__':
-    app.run(debug = True)
-    
+    return render_template('home.html', **locals())
+
+if __name__ == '__main__':
+    app.run()
